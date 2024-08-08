@@ -8,3 +8,8 @@ footer {
 .btn {
   display: none !important;
 }
+header {
+
+    display: none;
+    
+    } 
