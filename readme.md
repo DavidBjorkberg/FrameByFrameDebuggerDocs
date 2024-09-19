@@ -7,20 +7,10 @@ This plugin allows you to "record" frames, storing user defined data for each fr
 
 # C++
 ## Create Root Frame
-![Test](Assets/Test.png)
 1. Create class inheriting from UFBFData
 2. Create properties for the data you want to save
     Note: All Properties must be marked as UPROPERTY()
-### 
-``c++
-class UExampleFrame : UFBFData
-{
-    UPROPERTY()
-    float DeltaTime;
-    UPROPERTY()
-    FVector Velocity;
-}
-```
+![FrameExample](Assets/FrameExample.png)
 3. Inherit IFBFDebugActor on any singleton (Gamemode, PlayerController, etc)
 4. Override IsRoot() and return true
 4. Override GetDebugFrame() 
