@@ -9,8 +9,8 @@ This plugin allows you to "record" frames, storing user defined data for each fr
 ## Create Root Frame
 1. Create class inheriting from UFBFData
 2. Create properties for the data you want to save
-    Note: All Properties must be marked as UPROPERTY()
-    
+> All Properties must be marked as UPROPERTY()
+
 ![FrameExample](Assets/FrameExample.png)
 3. Inherit IFBFDebugActor on any singleton (Gamemode, PlayerController, etc)
 4. Override IsRoot() and return true
