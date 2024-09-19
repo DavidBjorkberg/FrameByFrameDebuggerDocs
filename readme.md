@@ -21,6 +21,7 @@ This plugin allows you to "record" frames, storing user defined data for each fr
 ## Create Actor
 1. Create class inheriting from UFBFData
 2. Add any other properties you want to track
+
 ### Required Properties 
     1. Position (FVector)
     2. Name (FString)
