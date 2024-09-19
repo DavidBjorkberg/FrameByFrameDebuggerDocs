@@ -6,16 +6,33 @@ This plugin allows you to "record" frames, storing user defined data for each fr
 # How to use
 
 # C++
-![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png)
 ## Create Root Frame
 ![Test](Assets/Test.png)
 1. Create class inheriting from UFBFData
 2. Create properties for the data you want to save
     Note: All Properties must be marked as UPROPERTY()
+``c++
+class UExampleFrame : UFBFData
+{
+    UPROPERTY()
+    float DeltaTime;
+    UPROPERTY()
+    FVector Velocity;
+}
+```
 3. Inherit IFBFDebugActor on any singleton (Gamemode, PlayerController, etc)
 4. Override IsRoot() and return true
 4. Override GetDebugFrame() 
 5. In GetDebugFrame() create an instance of your class and assign its properties and return it
+``
+UFBFData* GetDebugFrame()
+{
+    UExampleFrame Frame = NewObject<UExampleFrame>();
+    Frame.DeltaTime = GetWorld()->GetDeltaSeconds();
+    Frame.Velocity = GetOwner().Velocity;
+    return Frame;
+}
+```
 6. Optional: Add an array of UFBFData* called Actors
 
 ## Create Actor
