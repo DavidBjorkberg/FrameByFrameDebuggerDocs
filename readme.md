@@ -6,7 +6,8 @@ This plugin allows you to "record" frames, storing user defined data for each fr
 # How to use
 
 # C++
-
+![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png)
+![Test](Assets/Test.png)
 ## Create Root Frame
 1. Create class inheriting from UFBFData
 2. Create properties for the data you want to save
@@ -15,7 +16,8 @@ This plugin allows you to "record" frames, storing user defined data for each fr
 4. Override IsRoot() and return true
 4. Override GetDebugFrame() 
 5. In GetDebugFrame() create an instance of your class and assign its properties and return it
-6. Optional: Add an array of UFBFData* called Actors.
+6. Optional: Add an array of UFBFData* called Actors
+
 ## Create Actor
 1. Create class inheriting from UFBFData
 2. Add any other properties you want to track
