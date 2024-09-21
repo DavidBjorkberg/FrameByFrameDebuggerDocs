@@ -2,7 +2,7 @@
 This plugin allows you to "record" frames, storing user defined data for each frame and replaying it later. Allowing far easier debugging in situations where breakpoints or printing isn't sufficient.
 # Why would I want this?
 
-
+[Blueprint](Blueprint.md)
 # How to use
 
 # C++
@@ -11,20 +11,15 @@ This plugin allows you to "record" frames, storing user defined data for each fr
 2. Create properties for the data you want to save
 > All Properties must be marked as UPROPERTY()
 
+> Supported types are FString, int, float, double, bool, FVector, FLinearColor
+
 ![FrameExample](Assets/FrameExample.png)
+
 3. Inherit IFBFDebugActor on any singleton (Gamemode, PlayerController, etc)
 4. Override IsRoot() and return true
 4. Override GetDebugFrame() 
 5. In GetDebugFrame() create an instance of your class and assign its properties and return it
-``
-UFBFData* GetDebugFrame()
-{
-    UExampleFrame Frame = NewObject<UExampleFrame>();
-    Frame.DeltaTime = GetWorld()->GetDeltaSeconds();
-    Frame.Velocity = GetOwner().Velocity;
-    return Frame;
-}
-```
+
 6. Optional: Add an array of UFBFData* called Actors
 
 ## Create Actor
@@ -56,12 +51,14 @@ UFBFData* GetDebugFrame()
 ## Defining an Actor
 1. Create class inheriting from UFBFData
 2. Add any other properties you want to track
+> Supported types are FString, int, float, double, bool, FVector, FLinearColor
 ### Required Properties 
-    1. Position (FVector)
-    3. Name (FString)
+1. Position (FVector)
+2. Name (FString)
 ### Optional Properties
-    1. Extents (FVector)
-    2. MeshPath (FString)
+1. Extents (FVector)
+2. MeshPath (FString)
+
 3. Create a component inheriting from UFBFDebugComponent 
 4. Override GetDebugFrame()
 5. Construct your UFBFData object, set its properties and return it.
@@ -80,8 +77,6 @@ Some property names are in use by the plugin. Avoid using these when defining yo
 
 # TODO
 1. Reserved keywords section
-2. Supported types
-3. Tip: If you remove UPROPERTY() from a property it will no longer be saved (Maybe useful?)
 4. How to start / stop record
 5. How to launch debug play
 6. Find a better word for "debug Scene"
