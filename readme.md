@@ -51,7 +51,6 @@ The actor frame is where you store any variable specific to a certain actor. By 
 ## Navmesh
 By adding a navmesh to the scene and setting 'Runtime Generation' to Dynamic the navmesh will automatically be saved and displayed in the debug scene.
     Note: Runtime Generation is set on the RecastNavmesh.
-    Note: Can't save if the plugin path has a whitespace in it. (Can i remove the whitespace?)
 
 ## Reserved keywords
 Some property names are reserved for use by the plugin. These may not be used outside of the actor frame or with the wrong type.
@@ -61,3 +60,4 @@ Some property names are reserved for use by the plugin. These may not be used ou
 - "MeshPath"
 
 Property names that you add to a frame class may be reused, but not with a different type.
+
