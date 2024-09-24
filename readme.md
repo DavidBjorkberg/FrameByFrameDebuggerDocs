@@ -20,16 +20,15 @@ The actor frame is where you store any variable specific to a certain actor. By 
     > All Properties must be marked as UPROPERTY()
     
     > Supported types are FString, int, float, bool, FVector, FLinearColor, FBFDrawableArrow, FBFDrawableBox and FBFDrawableSphere
-
-![FrameExample](Assets/FrameExample.png)
-
-3. Inherit IFBFDebugActor on any singleton (Gamemode, PlayerController, etc)
-4. Override IsRoot() and return true
-4. Override GetDebugFrame() 
-5. In GetDebugFrame() create an instance of your class and assign its properties and return it
-
-6. Optional: Create the Actors array (TArray<UFBFData*> Actors)
+3. (Optional) Create the Actors array (TArray<UFBFData*> Actors)
     > The Actors array is automatically filled with actors in the scene. You do not manually fill it.
+
+    ![FrameExample](Assets/FrameExample.png)
+
+4. Inherit IFBFDebugActor on any singleton (Gamemode, PlayerController, etc)
+5. Override IsRoot() and return true
+6. Override GetDebugFrame() 
+7. In GetDebugFrame() create an instance of your class and assign its properties and return it
 
 ## Create Actor
 1. Create class inheriting from UFBFData
@@ -38,6 +37,8 @@ The actor frame is where you store any variable specific to a certain actor. By 
 ### Required Properties 
 1. Position (FVector)
 2. Name (FString)
+    > Name must be unique for that actor.
+
     > You can add the FBFHide meta tag to a property to hide it in the debug view
 
 ### Optional Properties
@@ -76,3 +77,4 @@ Some property names are reserved for use by the plugin. These can be reused, but
 - Segments(int)
 
 Property names that you add to a frame class may also be reused, but not with a different type.
+
