@@ -1,10 +1,19 @@
-# What is this?
-This plugin allows you to "record" frames, storing user defined data for each frame and replaying it later. Allowing far easier debugging in situations where breakpoints or printing isn't sufficient.
-# Why would I want this?
+<h1 style="text-align:center;">C++</h1>
 
 [Blueprint](Blueprint.md)
+
+# What is this?
+This plugin allows you to "record" frames, storing user defined data for each frame and replaying it later. Allowing far easier debugging in situations where breakpoints or logging isn't sufficient.
+# Why would I want this?
+This plugin is designed to help debug problems where traditional breakpoints or logging methods are insufficient. Often, pausing the application with a breakpoint disrupts the test case, and logging every relevant value becomes too messy.
+
+For example if the player throws a grenade but you notice that after a bit, the trajectory seems off. Debugging this can be challenging since setting breakpoints is impractical without knowing exactly when the issue occurs. Although logging velocity and other relevant data each frame is an option, it often results in an overwhelming amount of convoluted data to sift through. With this plugin you can easily record the velocity and any other relevant data and replay it later frame by frame to see exactly when and how it goes wrong.
+
 # How to use
-- Create the root frame where you can store any global variable you want to track (e.g deltatime) and an array of actor frames where you can store data about a specific actor in the scene.
+This plugin consists of two core parts: the root frame and the actor frame.
+The root frame is where you store any global variable you want to track, for example the frames DeltaTime.
+The actor frame is where you store any variable specific to a certain actor. By creating an actor frame, the actor is drawn out in the debug scene and you can select it and view its properties at any time.
+
 ## Create Root Frame
 1. Create class inheriting from UFBFData
 2. Create properties for the data you want to save
@@ -19,7 +28,8 @@ This plugin allows you to "record" frames, storing user defined data for each fr
 4. Override GetDebugFrame() 
 5. In GetDebugFrame() create an instance of your class and assign its properties and return it
 
-6. Optional: Add an array of UFBFData* called Actors
+6. Optional: Create the Actors array (TArray<UFBFData*> Actors)
+> Note that the Actors array is automatically filled with actors in the scene. You do not manually fill it.
 
 ## Create Actor
 1. Create class inheriting from UFBFData
