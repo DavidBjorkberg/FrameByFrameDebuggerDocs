@@ -17,9 +17,9 @@ The actor frame is where you store any variable specific to a certain actor. By 
 ## Create Root Frame
 1. Create class inheriting from UFBFData
 2. Create properties for the data you want to save
-> All Properties must be marked as UPROPERTY()
-
-> Supported types are FString, int, float, double, bool, FVector, FLinearColor, FBFDrawableArrow, FBFDrawableBox and FBFDrawableSphere
+    > All Properties must be marked as UPROPERTY()
+    
+    > Supported types are FString, int, float, double, bool, FVector, FLinearColor, FBFDrawableArrow, FBFDrawableBox and FBFDrawableSphere
 
 ![FrameExample](Assets/FrameExample.png)
 
@@ -29,43 +29,51 @@ The actor frame is where you store any variable specific to a certain actor. By 
 5. In GetDebugFrame() create an instance of your class and assign its properties and return it
 
 6. Optional: Create the Actors array (TArray<UFBFData*> Actors)
-> Note that the Actors array is automatically filled with actors in the scene. You do not manually fill it.
+    > The Actors array is automatically filled with actors in the scene. You do not manually fill it.
 
 ## Create Actor
 1. Create class inheriting from UFBFData
 2. Add any other properties you want to track
 
 ### Required Properties 
-    1. Position (FVector)
-    2. Name (FString)
-> You can add the FBFHide meta tag to a property to hide it in the debug view
+1. Position (FVector)
+2. Name (FString)
+    > You can add the FBFHide meta tag to a property to hide it in the debug view
 
 ### Optional Properties
-    1. Extents (FVector). If not set, will just spawn with (1,1,1) scale
-    2. MeshPath (FString). If not set, will spawn a generic cylinder
-    Note: All Properties must be marked as UPROPERTY()
+1. Extents (FVector). If not set, will just spawn with (1,1,1) scale
+2. MeshPath (FString). If not set, will spawn a generic cylinder
+    > All Properties must be marked as UPROPERTY()
 3. Inherit IFBFDebugActor on the actor you want to track 
 4. Override GetDebugFrame()
 5. Construct your UFBFData object, set its properties and return it.
 
 ## Drawable classes
 FBFDrawableArrow, FBFDrawableBox and FBFDrawableSphere are custom classes that will be drawn out in the scene if added as a property in a frame class.
-> Note: Instances of these classes are created with their static Create() Function.
+> Instances of these classes are created with their static Create() Function.
 
 ## Navmesh
 By adding a navmesh to the scene and setting 'Runtime Generation' to Dynamic the navmesh will automatically be saved and displayed in the debug scene.
 > Runtime Generation is set on the RecastNavmesh.
+
 > Navmesh can't be saved if the plugin path has a whitespace in it.
 
 ## Start/Stop Record
 Start recording by using the command FBF.StartRecord and stop recording with either FBF.StopRecord or by exiting PIE.
+
 With the bRecordOnStartUp Project setting, it will automatically start recording on start.
 
 ## Reserved keywords
-Some property names are reserved for use by the plugin. These may not be used outside of the actor frame or with the wrong type.
-- "Position"
-- "Name"
-- "Extents"
-- "MeshPath"
+Some property names are reserved for use by the plugin. These can be reused, but not with the wrong type.
+- Position (FVector)
+- Name (FString)
+- Extents (FVector)
+- MeshPath (FString)
+- Origin (FVector)
+- Direction (FVector)
+- Color (FLinearColor)
+- ArrowLength (float)
+- Radius (float)
+- Segments(int)
 
-Property names that you add to a frame class may be reused, but not with a different type.
+Property names that you add to a frame class may also be reused, but not with a different type.
