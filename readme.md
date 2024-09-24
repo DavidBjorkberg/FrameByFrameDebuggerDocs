@@ -54,15 +54,10 @@ By adding a navmesh to the scene and setting 'Runtime Generation' to Dynamic the
     Note: Can't save if the plugin path has a whitespace in it. (Can i remove the whitespace?)
 
 ## Reserved keywords
-Some property names are in use by the plugin. Avoid using these when defining your own properties.
- // They aren't reserved. But the user may not define it with a different type
--- Don't inherit from interface in blueprint. Will cause crash. 
+Some property names are reserved for use by the plugin. These may not be used outside of the actor frame or with the wrong type.
+- "Position"
+- "Name"
+- "Extents"
+- "MeshPath"
 
-
-# TODO
-1. Reserved keywords section
-4. How to start / stop record
-5. How to launch debug play
-6. Find a better word for "debug Scene"
-7. Add pics
-8. Features list. Maybe it should just be in marketplace desc?
+Property names that you add to a frame class may be reused, but not with a different type.
