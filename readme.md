@@ -19,7 +19,7 @@ The actor frame is where you store any variable specific to a certain actor. By 
 2. Create properties for the data you want to save
     > All Properties must be marked as UPROPERTY()
     
-    > Supported types are FString, int, float, double, bool, FVector, FLinearColor, FBFDrawableArrow, FBFDrawableBox and FBFDrawableSphere
+    > Supported types are FString, int, float, bool, FVector, FLinearColor, FBFDrawableArrow, FBFDrawableBox and FBFDrawableSphere
 
 ![FrameExample](Assets/FrameExample.png)
 
@@ -43,7 +43,6 @@ The actor frame is where you store any variable specific to a certain actor. By 
 ### Optional Properties
 1. Extents (FVector). If not set, will just spawn with (1,1,1) scale
 2. MeshPath (FString). If not set, will spawn a generic cylinder
-    > All Properties must be marked as UPROPERTY()
 3. Inherit IFBFDebugActor on the actor you want to track 
 4. Override GetDebugFrame()
 5. Construct your UFBFData object, set its properties and return it.
