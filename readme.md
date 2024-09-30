@@ -67,16 +67,16 @@ This plugin has two main components: the root frame and the actor frame.
 2. **Add Properties for Tracking**
     - Add the properties you want to track.
 
-### Required Properties
-1. `Position` (FVector)
-2. `Name` (FString) 
-    - You can use the `FBFHide` meta tag to hide this property in the debug view.
+    **Required Properties**
+    1. `Position` (FVector)
+    2. `Name` (FString) 
+        - You can use the `FBFHide` meta tag to hide this property in the debug view.
 
-### Optional Properties
-1. `Extents` (FVector) 
-    - If not set, the object will spawn with a default scale of (1,1,1).
-2. `MeshPath` (FString) 
-    - If not set, a generic cylinder will spawn.
+    **Optional Properties**
+    1. `Extents` (FVector) 
+        - If not set, the object will spawn with a default scale of (1,1,1).
+    2. `MeshPath` (FString) 
+        - If not set, a generic cylinder will spawn.
 
 3. **Inherit `IFBFDebugActor` on the Actor You Want to Track**
 
