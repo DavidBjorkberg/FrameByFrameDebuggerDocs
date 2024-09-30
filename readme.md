@@ -44,7 +44,7 @@ This plugin has two main components: the root frame and the actor frame.
 
 3. **(Optional) Create the Actors Array**
     - Define `TArray<UFBFData*> Actors`.
-    - **Note:** The Actors array is automatically filled with actors in the scene that implement the `IFBFData` interface. You do not manually populate it.
+    > **Note:** The Actors array is automatically filled with actors in the scene that implement the `IFBFData` interface. You do not manually populate it.
 
     ![FrameExample](Assets/FrameExample.png)
 
@@ -60,6 +60,7 @@ This plugin has two main components: the root frame and the actor frame.
     - Assign its properties and return it.
     
       ![FrameExample](Assets/GetDebugFrameExample.png)
+
 ## Create Actor
 1. **Create a Class Inheriting from UFBFData**
     - Define a class that inherits from `UFBFData`.
