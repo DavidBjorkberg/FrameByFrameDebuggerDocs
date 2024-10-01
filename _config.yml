@@ -7,5 +7,5 @@ remote_theme: pages-themes/architect@v0.2.0
 #remote_theme: pages-themes/slate@v0.2.0 Too dark
 #remote_theme: pages-themes/tactile@v0.2.0 Not centered
 plugins:
-- jekyll-remote-theme 
+- jekyll-remote-theme
 title: FrameByFrameDebuggerDocs
