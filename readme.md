@@ -104,6 +104,8 @@ This plugin has two main components: the root frame and the actor frame.
 5. **Watch the Replay!**
    - Click on the "Debug Scene" button to view the replay of your gameplay.
    
+    ![FrameExample](Assets/Replay.png)
+
 ## Drawable classes
 FBFDrawableArrow, FBFDrawableBox and FBFDrawableSphere are custom classes that will be drawn out in the scene if added as a property in a frame class.
 > Instances of these classes can be created with their static Create() Function.
