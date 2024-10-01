@@ -44,7 +44,7 @@ This plugin has two main components: the root frame and the actor frame.
 
 3. **(Optional) Create the Actors Array**
     - Define `TArray<UFBFData*> Actors`.
-    > **Note:** The Actors array is automatically filled with actors in the scene that implement the `IFBFData` interface. You do not manually populate it.
+    - **Note:** The Actors array is automatically filled with actors in the scene that implement the `IFBFData` interface. You do not manually populate it.
 
     ![FrameExample](Assets/FrameExample.png)
 
@@ -60,7 +60,7 @@ This plugin has two main components: the root frame and the actor frame.
     - Assign its properties and return it.
     
       ![FrameExample](Assets/GetDebugFrameExample.png)
-
+      
 ## Create Actor
 1. **Create a Class Inheriting from UFBFData**
     - Define a class that inherits from `UFBFData`.
@@ -86,6 +86,7 @@ This plugin has two main components: the root frame and the actor frame.
     - Inside `GetDebugFrame()`, create an instance of your custom class, set its properties, and return it.
 
 > Note: This can also be implemented with components by creating a component that inherits `IFBFDebugActor` and adding the component to the actor.
+
 ## Record & Play
 
 1. **Start the Game in PIE**
@@ -112,3 +113,12 @@ By adding a navmesh to the scene and setting 'Runtime Generation' to Dynamic the
 > Runtime Generation is set on the RecastNavmesh.
 
 > Navmesh can't be saved if the plugin path has a whitespace in it.
+
+## Project settings
+- **RecordOnStartUp**
+    - If recording should automatically start when you enter PIE
+- **MaxNumberOfSavedFrames**
+    - Max number of frames to cache before the oldest ones get discarded
+    - Increasing this increases RAM usage and save/load time.
+- **NumberOfDecimalsToShow**
+    - Number of decimals to show on floats in the debug view
