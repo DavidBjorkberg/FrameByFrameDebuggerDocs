@@ -1,6 +1,5 @@
 <h1 style="text-align:center;">C++</h1>
 
-
 [Blueprint](Blueprint.md)
 
 # What is this?
