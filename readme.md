@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 <h1 style="text-align:center;">C++</h1>
 
 [Blueprint](Blueprint.md)
