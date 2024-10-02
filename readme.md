@@ -1,3 +1,9 @@
+<style>
+  .md-content__button {
+    display: none;
+  }
+</style>
+
 <h1 style="text-align:center;">C++</h1>
 
 
