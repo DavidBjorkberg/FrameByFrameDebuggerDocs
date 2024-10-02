@@ -5,8 +5,8 @@
 #theme: jekyll-theme-architect
 #theme: jekyll-theme-minimal
 #theme: jekyll-theme-cayman
-theme: jekyll-theme-slate
-#remote_theme: pages-themes/tactile@v0.2.0 Not centered
+#theme: jekyll-theme-slate
+theme: jekyll-theme-tactile
 plugins:
 - jekyll-remote-theme
 title: FrameByFrameDebuggerDocs
