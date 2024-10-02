@@ -103,7 +103,7 @@ This plugin has two main components: the root frame and the actor frame.
 
 5. **Watch the Replay!**
    - Click on the "Debug Scene" button to view the replay of your gameplay.
-   
+
     ![FrameExample](Assets/Replay.png)
 
 ## Drawable classes
@@ -124,3 +124,6 @@ By adding a navmesh to the scene and setting 'Runtime Generation' to Dynamic the
     - Increasing this increases RAM usage and save/load time.
 - **NumberOfDecimalsToShow**
     - Number of decimals to show on floats in the debug view
+
+
+    //Document whats available in packaged build
