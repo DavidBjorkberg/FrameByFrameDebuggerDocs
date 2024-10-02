@@ -1,11 +1,11 @@
-theme: jekyll-theme-midnight
+#theme: jekyll-theme-midnight
 #remote_theme: pages-themes/minimal@v0.2.0
 #theme: jekyll-theme-merlot
 #theme: jekyll-theme-modernist
 #theme: jekyll-theme-architect
 #theme: jekyll-theme-minimal
 #theme: jekyll-theme-cayman
-#remote_theme: pages-themes/slate@v0.2.0
+theme: jekyll-theme-slate
 #remote_theme: pages-themes/tactile@v0.2.0 Not centered
 plugins:
 - jekyll-remote-theme
