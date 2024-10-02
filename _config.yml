@@ -7,6 +7,6 @@
 theme: jekyll-theme-cayman
 #remote_theme: pages-themes/slate@v0.2.0 Too dark
 #remote_theme: pages-themes/tactile@v0.2.0 Not centered
-plugins:
-- jekyll-remote-theme
+#plugins:
+#- jekyll-remote-theme
 title: FrameByFrameDebuggerDocs
