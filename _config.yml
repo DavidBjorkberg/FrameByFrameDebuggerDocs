@@ -5,13 +5,8 @@
 #theme: jekyll-theme-architect
 #theme: jekyll-theme-minimal
 #theme: jekyll-theme-cayman
-#remote_theme: pages-themes/slate@v0.2.0 Too dark
+remote_theme: pages-themes/slate@v0.2.0 Too dark
 #remote_theme: pages-themes/tactile@v0.2.0 Not centered
-#plugins:
-#- jekyll-remote-theme
-#title: FrameByFrameDebuggerDocs
-title: Architect theme
-description: Architect is a theme for GitHub Pages.
-show_downloads: true
-google_analytics:
-remote_theme: jekyll-theme-architect
+plugins:
+- jekyll-remote-theme
+title: FrameByFrameDebuggerDocs
