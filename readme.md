@@ -4,7 +4,9 @@
 [Blueprint](Blueprint.md)
 
 # What is this?
-This plugin allows you to "record" frames, storing user defined data for each frame and replaying it later. Allowing far easier debugging in situations where breakpoints or logging isn't sufficient.
+
+This plugin lets you "record" frames, storing user-defined data for each frame and replaying it later. By capturing unexpected behavior, you can step through it frame by frame to pinpoint exactly when and why it occurs. This simplifies debugging in scenarios where breakpoints or logging alone aren't sufficient.
+
 
 ![FrameExample](Assets/DebugScene.png)
 > TEMP ^
@@ -90,11 +92,11 @@ This plugin has two main components: the root frame and the actor frame.
 
 ## Record & Play
 
-1. **Start the Game in PIE**
+1. **Start the Game**
 
 2. **Start Recording**
    - Use the console command `FBF.StartRecord` to start recording.
-   - Alternatively, set `bRecordOnStartup` to `true` in your project settings to start recording automatically when the game begins.
+   - Alternatively, set `bRecordOnStartup` to `true` in your project settings to start recording automatically when you enter PIE.
 
 3. **Record Your Gameplay**
 
@@ -117,6 +119,8 @@ By adding a navmesh to the scene and setting 'Runtime Generation' to Dynamic the
 
 > Navmesh can't be saved if the plugin path has a whitespace in it.
 
+> Not available in packaged build
+
 ## Project settings
 - **RecordOnStartUp**
     - If recording should automatically start when you enter PIE
@@ -125,3 +129,5 @@ By adding a navmesh to the scene and setting 'Runtime Generation' to Dynamic the
     - Increasing this increases RAM usage and save/load time.
 - **NumberOfDecimalsToShow**
     - Number of decimals to show on floats in the debug view
+
+//Document whats available in packaged build
