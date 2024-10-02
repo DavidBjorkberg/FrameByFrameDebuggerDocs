@@ -1,6 +1,6 @@
-#remote_theme: pages-themes/midnight@v0.2.0
+theme: jekyll-theme-midnight
 #remote_theme: pages-themes/minimal@v0.2.0
-theme: jekyll-theme-merlot
+#theme: jekyll-theme-merlot
 #theme: jekyll-theme-modernist
 #theme: jekyll-theme-architect
 #theme: jekyll-theme-minimal
