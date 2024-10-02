@@ -3,9 +3,9 @@
 #remote_theme: pages-themes/merlot@v0.2.0
 #remote_theme: pages-themes/modernist@v0.2.0
 #theme: jekyll-theme-architect
-#theme: jekyll-theme-minimal
+theme: jekyll-theme-minimal
 #theme: jekyll-theme-cayman
-remote_theme: pages-themes/slate@v0.2.0
+#remote_theme: pages-themes/slate@v0.2.0
 #remote_theme: pages-themes/tactile@v0.2.0 Not centered
 plugins:
 - jekyll-remote-theme
