@@ -2,7 +2,8 @@
 #remote_theme: pages-themes/minimal@v0.2.0
 #remote_theme: pages-themes/merlot@v0.2.0
 #remote_theme: pages-themes/modernist@v0.2.0
-remote_theme: pages-themes/architect@v0.2.0
+#remote_theme: pages-themes/architect@v0.2.0
+theme: jekyll-theme-minimal
 #remote_theme: pages-themes/cayman@v0.2.0 Not centered
 #remote_theme: pages-themes/slate@v0.2.0 Too dark
 #remote_theme: pages-themes/tactile@v0.2.0 Not centered
