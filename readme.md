@@ -5,7 +5,9 @@
 
 # What is this?
 
-This plugin lets you "record" frames, storing user-defined data for each frame and replaying it later. By capturing unexpected behavior, you can step through it frame by frame to pinpoint exactly when and why it occurs. This simplifies debugging in scenarios where breakpoints or logging alone aren't sufficient.
+This plugin lets you "record" frames, storing user-defined data for each frame and replaying it later. 
+
+By capturing unexpected behavior, you can step through it frame by frame to pinpoint exactly when and why it occurs. This simplifies debugging in scenarios where breakpoints or logging alone aren't sufficient.
 
 
 ![FrameExample](Assets/DebugScene.png)
@@ -14,7 +16,11 @@ This plugin lets you "record" frames, storing user-defined data for each frame a
 # Why would I want this?
 This plugin is designed to help debug problems where traditional breakpoints or logging methods are insufficient. Often, pausing the application with a breakpoint disrupts the test case, and logging every relevant value becomes too messy.
 
-For example if the player throws a grenade but you notice that after a bit, the trajectory seems off. Debugging this can be challenging since setting breakpoints is impractical without knowing exactly when the issue occurs. Although logging velocity and other relevant data each frame is an option, it often results in an overwhelming amount of convoluted data to sift through. With this plugin you can easily record the velocity and any other relevant data and replay it later frame by frame to see exactly when and how it goes wrong.
+For example if the player throws a grenade but you notice that after a bit, the trajectory seems off. Debugging this can be challenging since setting breakpoints is impractical without knowing exactly when the issue occurs. 
+
+Although logging velocity and other relevant data each frame is an option, it often results in an overwhelming amount of convoluted data to sift through. 
+
+With this plugin you can easily record the velocity and any other relevant data and replay it later frame by frame to see exactly when and how it goes wrong.
 
 # How to use
 This plugin has two main components: the root frame and the actor frame.
@@ -88,8 +94,7 @@ This plugin has two main components: the root frame and the actor frame.
     - Implement the `GetDebugFrame()` method.
     - Inside `GetDebugFrame()`, create an instance of your custom class, set its properties, and return it.
 
-> Note: This can also be implemented with components by creating a component that inherits `IFBFDebugActor` and adding the component to the actor.
-
+> Note: Instead of inheriting `IFBFDebugActor` directly on the actor, you can instead do it on a component and add it to the actor.
 ## Record & Play
 
 1. **Start the Game**
