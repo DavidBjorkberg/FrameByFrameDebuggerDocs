@@ -31,7 +31,9 @@ This plugin has two main components: the root frame and the actor frame.
 2. **Actor Frame**
    - Stores variables specific to individual actors. By creating an actor frame, the actor is rendered in the debug scene. You can then select the actor to view its properties at any time.
 
-## Create Root Frame
+## 1. Create Root Frame
+
+![RootFrame](Assets/RootFrame.png)
 
 1. **Create a Class**
     - Inherit from `UFBFData`.
@@ -55,7 +57,6 @@ This plugin has two main components: the root frame and the actor frame.
     - Define `TArray<UFBFData*> Actors`.
     - **Note:** The Actors array is automatically filled with actors in the scene that implement the `IFBFData` interface. You do not manually populate it.
 
-    ![FrameExample](Assets/FrameExample.png)
 
 4. **Implement the IFBFDebugActor Interface**
     - Choose any singleton (e.g., GameMode, PlayerController, etc.)
@@ -70,7 +71,10 @@ This plugin has two main components: the root frame and the actor frame.
     
       ![FrameExample](Assets/GetDebugFrameExample.png)
       
-## Create Actor
+## 2. Create Actor Frame
+
+![ActorFrame](Assets/ActorFrame.png)
+
 1. **Create a Class Inheriting from UFBFData**
     - Define a class that inherits from `UFBFData`.
 
@@ -84,9 +88,11 @@ This plugin has two main components: the root frame and the actor frame.
 
     **Optional Properties**
     1. `Extents` (FVector) 
-        - If not set, the object will spawn with a default scale of (1,1,1).
+        - If not set, the actor will spawn with a scale of (1,1,1).
     2. `MeshPath` (FString) 
         - If not set, a generic cylinder will spawn.
+    3. `Rotation` (FVector)
+        - If not set, the actor will spawn with zeroed rotation.
 
 3. **Inherit `IFBFDebugActor` on the Actor You Want to Track**
 
@@ -95,7 +101,18 @@ This plugin has two main components: the root frame and the actor frame.
     - Inside `GetDebugFrame()`, create an instance of your custom class, set its properties, and return it.
 
 > Note: Instead of inheriting `IFBFDebugActor` directly on the actor, you can instead do it on a component and add it to the actor.
-## Record & Play
+
+## 3. (Optional) Navmesh
+1. Add a NavMeshBoundsVolume to the scene
+2. Set `Runtime Generation` to `true` (This is set on the `RecastNavmesh`)
+3. The Navmesh will now be automatically saved and displayed in the debug scene
+
+> Navmesh can't be saved if the plugin path has a whitespace in it.
+
+> Not available in packaged build
+
+
+## 4. Record & Play
 
 1. **Start the Game**
 
@@ -114,25 +131,22 @@ This plugin has two main components: the root frame and the actor frame.
 
     ![FrameExample](Assets/Replay.png)
 
-## Drawable classes
-FBFDrawableArrow, FBFDrawableBox and FBFDrawableSphere are custom classes that will be drawn out in the scene if added as a property in a frame class.
-> Instances of these classes can be created with their static Create() Function.
+## Drawable Classes
 
-## Navmesh
-By adding a navmesh to the scene and setting 'Runtime Generation' to Dynamic the navmesh will automatically be saved and displayed in the debug scene.
-> Runtime Generation is set on the RecastNavmesh.
+To add debug shapes to your scene, you can use drawable classes like `FBFDrawableArrow`, `FBFDrawableBox`, and `FBFDrawableSphere`. Simply add these as properties in your frame class, and they will be drawn in the scene.
 
-> Navmesh can't be saved if the plugin path has a whitespace in it.
+To create your own drawable class, follow these steps:
 
-> Not available in packaged build
+1. Inherit from the `UFBFData` class.
+2. Override the `CanDraw()` method and make it return `true`.
+3. Implement the `Draw()` method to specify how the object should be drawn.
 
 ## Project settings
 - **RecordOnStartUp**
     - If recording should automatically start when you enter PIE
-- **MaxNumberOfSavedFrames**
-    - Max number of frames to cache before the oldest ones get discarded
-    - Increasing this increases RAM usage and save/load time.
 - **NumberOfDecimalsToShow**
     - Number of decimals to show on floats in the debug view
-
-//Document whats available in packaged build
+- **CachePartialFrames**
+	- Whether to cache partial or complete frames.
+	- If `true`: Only cache the changes in each recorded frame. Increases CPU load.
+	- If `false`: Cache entire recorded frame. Increases memory usage.
