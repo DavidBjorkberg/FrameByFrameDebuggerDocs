@@ -26,7 +26,7 @@ With this plugin you can easily record the velocity and any other relevant data 
 This plugin has two main components: the root frame and the actor frame.
 
 1. **Root Frame**
-   - Stores global variables that you want to track, such as DeltaTime.
+   - Stores any global variables that you want to track, such as DeltaTime.
    
 2. **Actor Frame**
    - Stores variables specific to individual actors. By creating an actor frame, the actor is rendered in the debug scene. You can then select the actor to view its properties at any time.
@@ -52,6 +52,7 @@ This plugin has two main components: the root frame and the actor frame.
     - `UFBFDrawableArrow`
     - `UFBFDrawableBox`
     - `UFBFDrawableSphere`
+    - `UFBFDrawableSpline`
 
 3. **(Optional) Create the Actors Array**
     - Define `TArray<UFBFData*> Actors`.
@@ -71,7 +72,7 @@ This plugin has two main components: the root frame and the actor frame.
     
       ![FrameExample](Assets/GetDebugFrameExample.png)
       
-## 2. Create Actor Frame
+## 2. (Optional) Create Actor Frame
 
 ![ActorFrame](Assets/ActorFrame.png)
 
@@ -89,9 +90,12 @@ This plugin has two main components: the root frame and the actor frame.
     **Optional Properties**
     1. `Extents` (FVector) 
         - If not set, the actor will spawn with a scale of (1,1,1).
-    2. `MeshPath` (FString) 
+    2. `Scale` (FVector)
+        - Can be used instead of `Extents` in simpler cases.
+
+    3. `MeshPath` (FString) 
         - If not set, a generic cylinder will spawn.
-    3. `Rotation` (FVector)
+    4. `Rotation` (FVector)
         - If not set, the actor will spawn with zeroed rotation.
 
 3. **Inherit `IFBFDebugActor` on the Actor You Want to Track**
@@ -127,18 +131,24 @@ This plugin has two main components: the root frame and the actor frame.
    - You can also stop the recording by exiting PIE mode.
 
 5. **Watch the Replay!**
-   - Click on the "Debug Scene" button to view the replay of your gameplay.
+   - Start the replay with the button in the top menu.
 
     ![FrameExample](Assets/Replay.png)
 
 ## Drawable Classes
 
-To add debug shapes to your scene, you can use drawable classes like `FBFDrawableArrow`, `FBFDrawableBox`, and `FBFDrawableSphere`. Simply add these as properties in your frame class, and they will be drawn in the scene.
+To add debug shapes to your scene, you can use the drawable classes
+- `FBFDrawableArrow`
+- `FBFDrawableBox`
+- `FBFDrawableSphere`
+- `FBFDrawableSpline`
+
+Add these as properties in your frame class, and they will be drawn in the scene.
 
 To create your own drawable class, follow these steps:
 
 1. Inherit from the `UFBFData` class.
-2. Override the `CanDraw()` method and make it return `true`.
+2. Override the `CanDraw()` method and return `true`.
 3. Implement the `Draw()` method to specify how the object should be drawn.
 
 ## Project settings
