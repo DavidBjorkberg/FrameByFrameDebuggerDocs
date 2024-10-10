@@ -30,14 +30,14 @@ This plugin has two main components: the `root frame` and the `actor frame`.
 
 ## Creating a Debug Frame
 
-### **Step 1: Create a Class**
+### Step 1: Create a Class
 - **Inherit from `UFBFData`**  
   Create a class that inherits from `UFBFData`.
 
 ### Step 2: Define Properties
 - **Add properties to track the data you want to save.**  
   **Note:** All properties should be marked with `UPROPERTY()`
-
+  
   **Supported Types:**
   - `FString`
   - `int`
