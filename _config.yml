@@ -10,3 +10,4 @@ theme: jekyll-theme-midnight
 plugins:
 - jekyll-remote-theme
 title: FrameByFrameDebuggerDocs
+google_analytics: G-F8DRMS9PJ7
