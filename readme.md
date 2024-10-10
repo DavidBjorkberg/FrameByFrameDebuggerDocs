@@ -11,7 +11,7 @@ By capturing unexpected behavior, you can step through it frame by frame to pinp
 
 
 ![FrameExample](Assets/DebugScene.png)
-> TEMP ^
+> TEMP ^ 
 
 # Why would I want this?
 
