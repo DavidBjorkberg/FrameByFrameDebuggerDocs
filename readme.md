@@ -1,13 +1,5 @@
 <h1 style="text-align:center;">C++</h1>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-F8DRMS9PJ7"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-F8DRMS9PJ7');
-</script>
 
 [Blueprint](Blueprint.md)
 
